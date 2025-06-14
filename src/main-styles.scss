@@ -1,6 +1,5 @@
 // defining global styles and changing variables
 @charset "utf-8";
-
 // Import the Google Font
 @import url("https://fonts.googleapis.com/css?family=Nunito:400,700|Lato:300, 900");
 
@@ -12,7 +11,7 @@ $green: #00cc86;
 $light-green: #bafacd;
 
 $red: #dc3900;
-$light-red: #ff35e3;
+$light-red: #ffe5e3;
 
 $family-primary: '"Nunito", sans-serif';
 $primary: $purple;
@@ -21,6 +20,9 @@ $link: $purple;
 $body-background-color: white;
 $control-border-width: 2px;
 $input-border-color: 'transparent';
-$input-background-color: $red;
+$input-background-color: $light-grey;
 $input-shadow: none;
+
+
+@import "bulma/bulma";
 
