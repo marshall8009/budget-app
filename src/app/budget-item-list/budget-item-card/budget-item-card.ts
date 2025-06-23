@@ -1,5 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { BudgetItem } from '../../../shared/models/budget-item.model';
 
 @Component({
   selector: 'app-budget-item-card',
@@ -8,6 +9,17 @@ import { CommonModule } from '@angular/common';
   styleUrl: './budget-item-card.scss'
 })
 export class BudgetItemCard {
-  @Input() isIncome: boolean = true;
+  @Input() item: BudgetItem | undefined;
+  @Output() xButtonClick: EventEmitter<any> = new EventEmitter<any>();
+  // constructor(item: BudgetItem) {
+  //   this.item = item;
+  // }
+  
+  ngOnInit(){
+    
+  }
 
+  onXButtonClick() {
+    this.xButtonClick.emit();
+  }
 }
