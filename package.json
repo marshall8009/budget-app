@@ -3,19 +3,20 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "npm run build-bulma -- --watch",
+    "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:budget-app": "node dist/budget-app/server/server.mjs",
-    "build-bulma": "sass --load-path=node_modules main-styles.scss main-styles.css"
+    "serve:ssr:budget-app": "node dist/budget-app/server/server.mjs"
   },
   "private": true,
   "dependencies": {
+    "@angular/cdk": "^20.0.4",
     "@angular/common": "^20.0.0",
     "@angular/compiler": "^20.0.0",
     "@angular/core": "^20.0.0",
     "@angular/forms": "^20.0.0",
+    "@angular/material": "^20.0.4",
     "@angular/platform-browser": "^20.0.0",
     "@angular/platform-server": "^20.0.0",
     "@angular/router": "^20.0.0",
