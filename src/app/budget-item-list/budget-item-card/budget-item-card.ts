@@ -11,6 +11,7 @@ import { BudgetItem } from '../../../shared/models/budget-item.model';
 export class BudgetItemCard {
   @Input() item: BudgetItem | undefined;
   @Output() xButtonClick: EventEmitter<any> = new EventEmitter<any>();
+  @Output() cardClick: EventEmitter<any> = new EventEmitter<any>();
   // constructor(item: BudgetItem) {
   //   this.item = item;
   // }
@@ -21,5 +22,9 @@ export class BudgetItemCard {
 
   onXButtonClick() {
     this.xButtonClick.emit();
+  }
+
+  onCardClick() {
+    this.cardClick.emit();
   }
 }
