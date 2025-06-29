@@ -1,12 +1,11 @@
-import { Component, Inject, Input } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { BudgetItem } from '../../shared/models/budget-item.model';
 import { AddItemForm } from "../add-item-form/add-item-form";
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-edit-item-modal',
-  imports: [AddItemForm, CommonModule],
+  imports: [AddItemForm],
   templateUrl: './edit-item-modal.html',
   styleUrl: './edit-item-modal.scss'
 })

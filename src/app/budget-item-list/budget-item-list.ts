@@ -5,15 +5,22 @@ import { BudgetItem } from '../../shared/models/budget-item.model';
 import { MatDialog } from '@angular/material/dialog';
 import { EditItemModal } from '../edit-item-modal/edit-item-modal';
 
+export interface UpdateEvent {
+  old: BudgetItem;
+  new: BudgetItem;
+}
+
 @Component({
   selector: 'app-budget-item-list',
   imports: [CommonModule, BudgetItemCard, NgFor],
   templateUrl: './budget-item-list.html',
   styleUrl: './budget-item-list.scss'
 })
+
 export class BudgetItemList {
   @Input() budgetItems: BudgetItem[] = [];
   @Output() delete: EventEmitter<BudgetItem> = new EventEmitter<BudgetItem>();
+  @Output() updateBudget: EventEmitter<UpdateEvent> = new EventEmitter<UpdateEvent>();
 
   constructor(public dialog: MatDialog) {  }
 
@@ -29,8 +36,10 @@ export class BudgetItemList {
 
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
-        // replace item with updated item
-        this.budgetItems[this.budgetItems.indexOf(item)] = result;
+        this.updateBudget.emit({
+          old: item,
+          new: result
+        });
       }
     })
   }
